@@ -20,7 +20,9 @@ public class UnionFind {
 	}
 
 	public int find(int p) {
-		validate(p);
+		if (p < 0 || p >= parent.length) {
+			throw new IllegalArgumentException("index " + p + " is not between 0 and" + (parent.length - 1));
+		}
 		while (p != parent[p]) {
 			parent[p] = parent[parent[p]];
 			p = parent[p];
@@ -43,13 +45,6 @@ public class UnionFind {
 			rank[rp]++;
 		}
 		counter--;
-	}
-
-	private void validate(int p) {
-		int n = parent.length;
-		if (p < 0 || p >= n) {
-			throw new IllegalArgumentException("index " + p + " is not between 0 and" + (n - 1));
-		}
 	}
 
 	public int getCounder() {
