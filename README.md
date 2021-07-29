@@ -14,4 +14,4 @@ expected output is:
 2
 
 Solution:
-I realized a clasical Union Find approach.
+I realized the clasical Union Find approach.
